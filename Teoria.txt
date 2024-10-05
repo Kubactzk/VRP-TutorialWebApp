@@ -1,0 +1,16 @@
+Problem marszrutyzacji pojazdów VRP (ang. Vehicle Routing Problem) jest NPtrudnym problemem, którego rozwiązanie jest kluczem do zwiększenia efektywności w transporcie.
+
+Oprogramowanie służące do rozwiązywania problemów VRP generuje
+spore oszczędności rzędu 5–30% dla używających go firm [129]. Dokładne metody
+nie są jednak w stanie podać w sensownym czasie rozwiązania dla instancji zawierających więcej niż 50–100 klientów. Dla takich problemów używane są rozwiązania przybliżone.
+
+Typy problemów:
+- CVRP (Capacity constrained VRP) - ograniczenie jedynie ładownością pojazdu
+	Założenia modelu CVRP to:
+	• stała liczba identycznych pojazdów posiadających określoną ładowność,
+	• stała liczba klientów ze zleceniami o określonym rozmiarze i lokalizacji,
+	• pojazdy są w stanie wykonywać zlecenia klientów, jednak całkowity rozmiar
+	obsłużonych przez pojazd zleceń nie może być większy niż jego ładowność,
+	• pojazdy są zlokalizowane w centralnej bazie, w której rozpoczynają i kończą pracę,
+	• podane są koszty podróży pomiędzy punktami,
+	• celem optymalizacji jest minimalizacja kosztów obsługi klientów

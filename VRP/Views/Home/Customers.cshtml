@@ -1,0 +1,87 @@
+﻿@using VRP.ViewModels
+@model CustomerVM
+
+@{
+    ViewData["Title"] = "Customers";
+}
+
+<style type="text/css">
+    img{
+        cursor: pointer;
+    }
+
+</style>
+<div class="row">
+    <div class="col">
+        <h3 class="mb-5">My customers - Map</h3>
+        <img id="map" src="~/images/Map.jpg" class="img" alt="My image" />
+        <div id="popupContainer">
+            @await Html.PartialAsync("_CustomerFormPartial", Model)
+        </div>     
+    </div>    
+    <div class="col">
+        <h3 class="mb-5">My customers - Table</h3>
+        @if (Model.Customers.Any()){
+            <table class="table-bordered form-control">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>X</th>
+                        <th>Y</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Customers)
+                    {
+                        <tr>
+                            <td>@item.Name</td>
+                            <td>@item.X</td>
+                            <td>@item.Y</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>No data to display</p>
+        }
+    </div>
+    
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    var img = document.getElementById("map");
+    var closeimg = document.getElementById("close");
+    var container = document.getElementById("container");
+    var popup = document.getElementById("popup");
+    var xpoint = document.getElementById("xpoint");
+    var ypoint = document.getElementById("ypoint");
+    var ypoint = document.getElementById("ypoint");
+    var addcustomersbutton = document.getElementById("addcustomersbutton");
+    var NameValidator = document.getElementById("NameValidator");
+
+    img.addEventListener("click", function () {
+        var x = event.pageX - this.offsetLeft;
+        var y = event.pageY - this.offsetTop;
+        xpoint.value = x;
+        ypoint.value = y;
+
+        popup.hidden = false;
+        container.hidden = false;
+    });
+
+    @*addcustomersbutton.addEventListener("click", function () {
+        popup.hidden = 0;
+        container.hidden = 0;
+    });*@
+    
+
+    closeimg.addEventListener("click", function () {
+        popup.hidden = true;
+        container.hidden = true;
+    });
+
+</script>
+

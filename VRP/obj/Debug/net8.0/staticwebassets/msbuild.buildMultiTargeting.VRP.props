@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\VRP.props" />
+</Project>

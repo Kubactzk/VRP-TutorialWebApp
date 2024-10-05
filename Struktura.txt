@@ -1,0 +1,10 @@
+1. Home
+	a. Moje trasy
+	b. Moje bazy - Dodaj/Usuń/Edytuj bazę
+	b. Baza Kierowców - Dodaj/Usuń/Edytuj kierowcę
+	c. Teoria
+2. Kreator tras
+	a. Dodaj kierowców do optymalizacji
+	b. Mapa
+	c. Wybierz algorytm optymalizacji
+	d. Zapisz trasę

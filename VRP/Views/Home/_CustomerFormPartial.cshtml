@@ -1,0 +1,34 @@
+﻿@model VRP.ViewModels.CustomerVM
+
+<form id ="customerForm" asp-action="Customers" method="post">
+    <div class="popup" hidden id="popup">
+    <div class="myContainer" id="container">
+        <img class="closeimage" id="close" src="~/images/close.png" />
+        <h3>Add name</h3>
+        <table id="InputTable" class="table-bordered myTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>X</th>
+                    <th>Y</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input id="e" asp-for="Customer.Name" />
+                        <span asp-validation-for="Customer.Name" class="text-danger"></span>
+                    </td>
+                    <td>
+                        <input asp-for="Customer.X" id="xpoint" />
+                    </td>
+                    <td>
+                        <input asp-for="Customer.Y" id="ypoint" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="submit" id="addcustomersbutton">Ok</button>
+    </div>
+    </div>
+</form>
